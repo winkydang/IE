@@ -22,3 +22,14 @@
 # # Output the dataframe into Excel format
 # df.to_excel('../../output_file/method2-煤炭-山东能源集团有限公司.xlsx', index=False)
 #
+
+import re
+
+s = '2022-07-29-012105084.IB-21潞安化工SCP005-潞安化工集团有限公司主体长期信用评级报告.pdf'
+pattern = r'\d{9}\.\w{2}'
+
+match = re.search(pattern, s)
+if match:
+    print(match.group())
+else:
+    print('未匹配到')
